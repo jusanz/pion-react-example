@@ -145,9 +145,9 @@ func main() {
 	})
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/createPeerConnection", createPeerConnection)
-	mux.HandleFunc("/addVideo", addVideo)
-	mux.HandleFunc("/removeVideo", removeVideo)
+	mux.HandleFunc("/save-on-disk-renegotiation/createPeerConnection", createPeerConnection)
+	mux.HandleFunc("/save-on-disk-renegotiation/addVideo", addVideo)
+	mux.HandleFunc("/save-on-disk-renegotiation/removeVideo", removeVideo)
 
 	go func() {
 		fmt.Println("Open http://localhost:8080 to access this demo")

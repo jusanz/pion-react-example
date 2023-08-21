@@ -32,15 +32,18 @@ export default function Index() {
       .then((offer) => {
         pcRef.current?.setLocalDescription(offer);
 
-        return fetch(`http://localhost:8080/${method}`, {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(offer),
-        });
+        return fetch(
+          `http://localhost:8080/save-on-disk-renegotiation/${method}`,
+          {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              Accept: "application/json, text/plain, */*",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(offer),
+          }
+        );
       })
       .then((res) => {
         return res.json();

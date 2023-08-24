@@ -8,11 +8,11 @@ services:
       - "3001:3001"
     volumes:
       - ./client/app:/usr/server/app
-  server:
-    build: ./server
+  play-from-disk-renegotiation:
+    build: ./play-from-disk-renegotiation
     ports:
       - "8080:8080"
     volumes:
-      - ./server:/usr/src/app
+      - ./play-from-disk-renegotiation:/usr/src/app
     environment:
       TZ: Asia/Tokyo

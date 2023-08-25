@@ -33,7 +33,7 @@ export default function Index() {
         pcRef.current?.setLocalDescription(offer);
 
         return fetch(
-          `http://localhost:8080/save-on-disk-renegotiation/${method}`,
+          `http://localhost:8080/play-from-disk-renegotiation/${method}`,
           {
             method: "POST",
             mode: "cors",

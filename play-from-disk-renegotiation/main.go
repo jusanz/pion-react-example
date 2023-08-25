@@ -10,7 +10,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"math/rand"
+	"log/slog"
 	"net/http"
 	"os"
 	"time"
@@ -70,7 +70,7 @@ func createPeerConnection(w http.ResponseWriter, r *http.Request) {
 	}
 
 	doSignaling(w, r)
-	fmt.Println("PeerConnection has been created")
+	slog.Info("PeerConnection has been created")
 }
 
 // Add a single video track
@@ -118,7 +118,6 @@ func removeVideo(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	rand.Seed(time.Now().UTC().UnixNano())
 
 	var err error
 	if peerConnection, err = webrtc.NewPeerConnection(webrtc.Configuration{}); err != nil {
